@@ -24,9 +24,15 @@ class Db:
 
 
 @dataclass
+class Channels:
+    backup: int
+
+
+@dataclass
 class Config:
     bot: Bot
     db: Db
+    channels: Channels
 
 
 def load_config() -> Config:
@@ -38,7 +44,7 @@ def load_config() -> Config:
         db=Db(
             url=getenv("DB_URL"),
         ),
+        channels=Channels(
+            backup=int(getenv("CHANNEL_BACKUP")),
+        ),
     )
-
-
-config: Config = load_config()

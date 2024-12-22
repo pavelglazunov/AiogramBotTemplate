@@ -6,9 +6,9 @@ from aiogram.client.default import DefaultBotProperties
 from dotenv import load_dotenv
 from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker
 
-import do_backup
+from src.services import backups
 from config.config import config
-from do_backup import do_backup
+from src.services.backups import do_backup
 from src.handlers import routers
 from src.middlewares import DbSessionMiddleware, MessageInPrivateMiddleware
 from src.models import Base
