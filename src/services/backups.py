@@ -6,7 +6,7 @@ from aiogram.exceptions import TelegramBadRequest, TelegramForbiddenError
 from config.config import Config
 
 
-async def do_backup(bot: Bot, config: Config):
+async def run(bot: Bot, config: Config):
     while True:
         try:
             await asyncio.sleep(86400 // 4)
